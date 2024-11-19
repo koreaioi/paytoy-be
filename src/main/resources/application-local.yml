@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  application:
+    name: PayToy-BE
+
+REDIS:
+  HOST: ${SPRING_REDIS_HOST}
+  PORT: ${SPRING_REDIS_PORT}
+  PASSWORD: ${SPRING_REDIS_PASSWORD}
+
+PUBLIC:
+  IP:
+    FRONT: ${PUBLIC_IP_FRONT}
+
+#  data:
+#    redis:
+#      host: ${SPRING_REDIS_HOST}
+#      port: ${SPRING_REDIS_PORT}        # Redis 서버의 포트 번호
+#      password: ${SPRING_REDIS_PASSWORD}  # Redis 서버의 비밀번호 (없으면 빈 값으로 남겨둠)
